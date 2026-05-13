@@ -4,12 +4,12 @@ except ValueError:
     quit()
 
 def square(x):
-    print(x*x)
+    print('Квадрат: ',x*x)
     return x*x
 
 
 def cube(x):
-    print(x*x*x)
+    print('Куб: ',x*x*x)
     return x*x*x
 
 
@@ -28,26 +28,28 @@ def posit(x):
     else: print('Отрицательное')
     return
 
-def del3(x):
-    if x%3 == 0:
-        print('Делится на 3')
+def deln(x):
+    n = 3
+    while n < x:
+        if x%n == 0:
+            print('Делится на ',n)
+        n += 1
+    zap = 1
+    n = 2
+    while n < x:
+        if x%n == 0:
+            zap+=1
+        if zap == 1:
+            print('Простое число!')
+            return
         return
-    else: print('Не делится на 3')
-    return
 
-def del5(x):
-    if x%5 == 0:
-        print('Делится на 5')
-        return
-    else: print('Не делится на 5')
-    return
 
 def analyze(x):
     square(x)
     cube(x)
     even(x)
     posit(x)
-    del3(x)
-    del5(x)
+    deln(x)
     return
 x = analyze(num)
